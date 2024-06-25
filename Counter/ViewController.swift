@@ -12,8 +12,8 @@ import UIKit
 class ViewController: UIViewController {
     var counter:Int = 0
     
-    func curr_dt () -> String{
-        let date = Date()
+    func getCurrentDateTime () -> String{
+        let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 
@@ -21,8 +21,8 @@ class ViewController: UIViewController {
             dateFormatter.timeZone = TimeZone(abbreviation: timeZoneAbbreviation)
         }
         dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss"
-        let dt = dateFormatter.string(from: date)
-        return dt
+        let currentDateInFormat = dateFormatter.string(from: currentDate)
+        return currentDateInFormat
     }
     
     
@@ -35,37 +35,37 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func buttonMinus(_ sender: Any) {
+    @IBAction func buttonMinusDidTap(_ sender: Any) {
         if counter - 1 >= 0 {
-            let dt = curr_dt()
+            let currentDateTime = getCurrentDateTime()
             counter -= 1
             labelCounter.text = counter.codingKey.stringValue
             print("The minus button was pressed. Current counter: \(counter)")
-            textView.text += "\n[\(dt)]: значение изменено на -1"
+            textView.text += "\n[\(currentDateTime)]: значение изменено на -1"
         } else {
-            let dt = Date()
-            textView.text += "\n[\(dt)]: попытка уменьшить значение счетчика ниже 0"
+            let currentDateTime = getCurrentDateTime()
+            textView.text += "\n[\(currentDateTime)]: попытка уменьшить значение счетчика ниже 0"
         }
     }
     
     @IBOutlet weak var labelCounter: UILabel!
     
-    @IBOutlet weak var buttonPlus: UIButton!
+    
     @IBOutlet weak var textView: UITextView!
     
-    @IBAction func buttonRefresh(_ sender: Any) {
+    @IBAction func buttonRefreshDidTap(_ sender: Any) {
         counter = 0
         labelCounter.text = counter.codingKey.stringValue
-        let dt = curr_dt()
+        let currentDateTime = getCurrentDateTime()
         print("The refresh button was pressed. Current counter: \(counter)")
-        textView.text += "\n[\(dt)]: значение изменено на 0"
+        textView.text += "\n[\(currentDateTime)]: значение изменено на 0"
     }
-    @IBAction func buttonDidTap(_ sender: Any) {
+    @IBAction func buttonPlusDidTap(_ sender: Any) {
         counter += 1
         labelCounter.text = counter.codingKey.stringValue
-        let dt = curr_dt()
+        let currentDateTime = getCurrentDateTime()
         print("The plus button was pressed. Current counter: \(counter)")
-        textView.text += "\n[\(dt)]: значение изменено на +1"
+        textView.text += "\n[\(currentDateTime)]: значение изменено на +1"
     }
     
 }
