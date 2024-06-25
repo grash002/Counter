@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE6A6FAF2C25D60300AE0488 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6A6FAE2C25D60300AE0488 /* refresh.png */; };
-		EE6A6FB12C25D62300AE0488 /* icons8-счетчик-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6A6FB02C25D62300AE0488 /* icons8-счетчик-100.png */; };
 		EEC1A1092C2351200082814D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1A1082C2351200082814D /* AppDelegate.swift */; };
 		EEC1A10B2C2351200082814D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1A10A2C2351200082814D /* SceneDelegate.swift */; };
 		EEC1A10D2C2351200082814D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1A10C2C2351200082814D /* ViewController.swift */; };
@@ -18,8 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE6A6FAE2C25D60300AE0488 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
-		EE6A6FB02C25D62300AE0488 /* icons8-счетчик-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-счетчик-100.png"; sourceTree = "<group>"; };
 		EEC1A1052C2351200082814D /* Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC1A1082C2351200082814D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEC1A10A2C2351200082814D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,16 +37,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE6A6FA72C25CE4E00AE0488 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				EE6A6FB02C25D62300AE0488 /* icons8-счетчик-100.png */,
-				EE6A6FAE2C25D60300AE0488 /* refresh.png */,
-			);
-			name = assets;
-			path = ../../../Clicker/assets;
-			sourceTree = "<group>";
-		};
 		EEC1A0FC2C2351200082814D = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +63,6 @@
 				EEC1A1112C2351210082814D /* Assets.xcassets */,
 				EEC1A1132C2351210082814D /* LaunchScreen.storyboard */,
 				EEC1A1162C2351210082814D /* Info.plist */,
-				EE6A6FA72C25CE4E00AE0488 /* assets */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -142,9 +127,7 @@
 			files = (
 				EEC1A1122C2351210082814D /* Assets.xcassets in Resources */,
 				EEC1A1152C2351210082814D /* Base in Resources */,
-				EE6A6FB12C25D62300AE0488 /* icons8-счетчик-100.png in Resources */,
 				EEC1A1102C2351200082814D /* Base in Resources */,
-				EE6A6FAF2C25D60300AE0488 /* refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
