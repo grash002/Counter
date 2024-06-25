@@ -12,11 +12,11 @@ import UIKit
 class ViewController: UIViewController {
     var counter:Int = 0
     
-    func getCurrentDateTime () -> String{
+    private func getCurrentDateTime () -> String{
         let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-
+        
         if let timeZoneAbbreviation = TimeZone.abbreviationDictionary["MSK"] {
             dateFormatter.timeZone = TimeZone(abbreviation: timeZoneAbbreviation)
         }
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func buttonMinusDidTap(_ sender: Any) {
+    @IBAction private func buttonMinusDidTap(_ sender: Any) {
         if counter - 1 >= 0 {
             let currentDateTime = getCurrentDateTime()
             counter -= 1
@@ -48,19 +48,19 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var labelCounter: UILabel!
+    @IBOutlet private weak var labelCounter: UILabel!
     
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet private weak var textView: UITextView!
     
-    @IBAction func buttonRefreshDidTap(_ sender: Any) {
+    @IBAction private func buttonRefreshDidTap(_ sender: Any) {
         counter = 0
         labelCounter.text = counter.codingKey.stringValue
         let currentDateTime = getCurrentDateTime()
         print("The refresh button was pressed. Current counter: \(counter)")
         textView.text += "\n[\(currentDateTime)]: значение изменено на 0"
     }
-    @IBAction func buttonPlusDidTap(_ sender: Any) {
+    @IBAction private func buttonPlusDidTap(_ sender: Any) {
         counter += 1
         labelCounter.text = counter.codingKey.stringValue
         let currentDateTime = getCurrentDateTime()
