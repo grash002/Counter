@@ -10,8 +10,19 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    var counter:Int = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        textView.text = "История изменений:"
+        textView.clipsToBounds = true;
+        textView.layer.cornerRadius = 10;
+        labelCounter.text = "0"
+    }
+    
+    private var counter:Int = 0
+    
     private func getCurrentDateTime () -> String{
+        
         let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -21,14 +32,9 @@ class ViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss"
         let currentDateInFormat = dateFormatter.string(from: currentDate)
         return currentDateInFormat
+        
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        textView.text = "История изменений:"
-        textView.clipsToBounds = true;
-        textView.layer.cornerRadius = 10;
-        labelCounter.text = "0"
-    }
+    
     @IBAction private func buttonMinusDidTap(_ sender: Any) {
         if counter - 1 >= 0 {
             let currentDateTime = getCurrentDateTime()
@@ -41,6 +47,7 @@ class ViewController: UIViewController {
             textView.text += "\n[\(currentDateTime)]: попытка уменьшить значение счетчика ниже 0"
         }
     }
+    
     @IBAction private func buttonRefreshDidTap(_ sender: Any) {
         counter = 0
         labelCounter.text = counter.codingKey.stringValue
@@ -48,6 +55,7 @@ class ViewController: UIViewController {
         print("The refresh button was pressed. Current counter: \(counter)")
         textView.text += "\n[\(currentDateTime)]: значение изменено на 0"
     }
+    
     @IBAction private func buttonPlusDidTap(_ sender: Any) {
         counter += 1
         labelCounter.text = counter.codingKey.stringValue
@@ -55,7 +63,9 @@ class ViewController: UIViewController {
         print("The plus button was pressed. Current counter: \(counter)")
         textView.text += "\n[\(currentDateTime)]: значение изменено на +1"
     }
+    
     @IBOutlet private weak var labelCounter: UILabel!
+    
     @IBOutlet private weak var textView: UITextView!
 }
 
