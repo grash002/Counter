@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Counter
+//  test
 //
-//  Created by Иван Иван on 21.06.2024.
+//  Created by Иван Иван on 19.06.2024.
 //
 
 import UIKit
